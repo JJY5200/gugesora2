@@ -260,26 +260,27 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-slate-950 text-slate-200 flex flex-col md:flex-row">
       {/* Sidebar */}
       <aside className="w-full md:w-64 bg-slate-900 border-r border-slate-800 flex flex-col z-20">
-        <div className="p-6 border-b border-slate-800 flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <Wand2 className="text-white w-5 h-5" />
+        <div className="p-6 border-b border-slate-800">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <Wand2 className="text-white w-5 h-5" />
+              </div>
+              <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                Sora2 Studio
+              </h1>
+            </div>
+            <button 
+              onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+              className="flex items-center gap-2 px-3 py-2 hover:bg-slate-800 rounded-lg transition-colors text-slate-400 hover:text-white"
+            >
+              <Settings className="w-5 h-5" />
+              <span className="text-sm font-medium">设置</span>
+            </button>
           </div>
-          <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
-            Sora2 Studio
-          </h1>
-        </div>
-
-        <div className="mt-auto p-4 border-t border-slate-800">
-          <button 
-            onClick={() => setIsSettingsOpen(!isSettingsOpen)}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-800 text-slate-400 transition-colors"
-          >
-            <Settings className="w-5 h-5" />
-            <span className="font-medium">设置</span>
-          </button>
           
           {isSettingsOpen && (
-            <div className="mt-4 space-y-4 bg-slate-900 p-4 rounded-xl border border-slate-700 shadow-xl absolute bottom-20 left-4 w-72 z-50">
+            <div className="mt-2 space-y-4 bg-slate-900 p-4 rounded-xl border border-slate-700 shadow-xl z-50">
                <h3 className="font-medium text-white mb-2">API 配置</h3>
                <Input 
                  label="API Key" 
