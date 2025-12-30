@@ -1,0 +1,5 @@
+{
+  "name": "Sora2 Studio",
+  "description": "使用 Sora2 API 创建视频的专业控制台，支持文生视频、图生视频和角色管理工具。",
+  "requestFramePermissions": []
+}
